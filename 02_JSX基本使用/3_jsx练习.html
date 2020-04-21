@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSX练习</title>
+</head>
+<body>
+  <div id="example"></div>
+  <!-- 一定注意区分: [js语句] 与 [js表达式]
+       1.表达式: 一个表达式会产生一个值,它可以放任何需要一个值的地方
+          举例: a
+              3 + b
+              demo("a","b")
+              arr.map()
+              function foo(){}
+       2.语句: 语句可以理解成一个行为,循环语句、if语句,都是典型的语句
+       
+  -->
+  <script type = "text/javascript" src="../js/react.development.js"></script>
+  <script type ="text/javascript" src="../js/react-dom.development.js"></script>
+  <script type="text/javascript" src="../js/babel.min.js"></script>
+  <script type="text/babel">
+      const arr = ['jQuery','Angular','react','vue']
+      const VDOM = (
+                <div>
+                   <h1>前端js框架</h1>
+                   <ul>
+                     {arr.map((item,index)=> <li key={item}>{item}</li>)}
+                   </ul>  
+                </div>  
+      )
+      ReactDOM.render(VDOM,document.getElementById('example'))
+  </script>
+</body>
+</html>

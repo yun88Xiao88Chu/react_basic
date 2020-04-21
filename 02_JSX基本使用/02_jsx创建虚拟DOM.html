@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>虚拟DOM的两种创建方式</title>
+  <style>
+    .title{
+      color: red;
+    }
+  </style>
+</head>
+<body>
+    <div id="test"></div>
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+    <script type="text/babel">
+        const myId = 'AtGuiGu'
+        const myContent = 'AtGuiGu'
+        const VDOM = (
+                    <div>
+                       <h1 id = {myId.toLowerCase()}>
+                          <span className="title" style={{fontSize:'50px'}}>
+                              {myContent.toLowerCase()}
+                          </span> 
+                       </h1>
+                       <h2>111</h2>
+                       <input type="text" />
+                    </div>  
+                    )
+            ReactDOM.render(VDOM,document.getElementById('test'))
+            /* 关于jsx你要知道的
+                1.jsx存在的意义,让程序员更加方便的创建虚拟DOM,几乎和写html是一样的
+                2.jsx语法经过babel的编译,一定会转为原生js的语法
+                3.jsx语法规则
+                  1.不要写引号,不是字符串
+                  2.标签里要混入js表达式,要这样:{js表达式}
+                  3.样式不要写class,要写className
+                  4.style的写法: style={{}},外层代表要写js表达式,内层代表对象
+                  5.必须只有一个根标签
+                  6.所有标签必须闭合
+            */        
+    </script>
+</body>
+</html>

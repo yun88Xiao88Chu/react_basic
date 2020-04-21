@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>虚拟DOM的两种创建方式</title>
+</head>
+<body>
+   <div id="test"></div>
+   <!-- react -->
+   <script type="text/javascript" src="../js/react.development.js"></script>
+   <script type="text/javascript" src="../js/react-dom.development.js"></script>
+   <script type="text/javascript">
+      const myId = "AtGuiGu"
+      const myContent = "Hellow,React"
+      // 创建虚拟DOM
+      const VDOM = React.createElement('h1',{id:myId.toLowerCase()},React.createElement('span',{content:myContent.toLowerCase()},myContent.toLowerCase()))
+      // 将虚拟DOM渲染成真实DOM
+      ReactDOM.render(VDOM,document.getElementById('test'))
+   </script>
+</body>
+</html>
